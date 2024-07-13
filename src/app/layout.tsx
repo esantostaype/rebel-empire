@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Antonio } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Background } from "@/components";
 
 const inter = Inter({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap'
-})
-
-export const antonio = Antonio({
-  weight: ['300', '400', '500', '600', '700'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap'
