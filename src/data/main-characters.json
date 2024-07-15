@@ -1,0 +1,17 @@
+[
+  {
+    "id": "luke",
+    "name": "Luke Skywalker",
+    "image": "/images/luke.webp"
+  },
+  {
+    "id": "vader",
+    "name": "Lord Darth Vader",
+    "image": "/images/vader.webp"
+  },
+  {
+    "id": "yoda",
+    "name": "Maestro Yoda",
+    "image": "/images/yoda.webp"
+  }
+]

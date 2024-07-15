@@ -1,13 +1,22 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next"
+import { Inter, Antonio } from "next/font/google"
 import "./globals.css";
-import { Background } from "@/components";
+import { Background, ToastNotification } from "@/components"
+import { Providers } from "./provider"
 
 const inter = Inter({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap'
+})
+
+const antonio = Antonio({
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: "--font-antonio",
 })
 
 export const metadata: Metadata = {
@@ -18,11 +27,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={ inter.className } suppressHydrationWarning={ true }>
-        <main className="app">
+      <body className={`${ inter.className } ${ antonio.variable }`} suppressHydrationWarning={ true }>
+        <Providers>
           { children }
-        </main>
+        </Providers>
         <Background/>
+        <ToastNotification/>
       </body>
     </html>
   )
