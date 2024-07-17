@@ -10,7 +10,7 @@ export const Header = () => {
       <nav className="flex-1 font-antonio font-light tracking-wide uppercase">
         <ul className="flex justify-center gap-12">
           <li><Link href="/characters">Personajes</Link></li>
-          <li><Link href="/starchips">Naves</Link></li>
+          <li><Link href="/starships">Naves</Link></li>
           <li><Link href="/planets">Planetas</Link></li>
           <li><Link href="/mini-histories">Mini Historias</Link></li>
         </ul>

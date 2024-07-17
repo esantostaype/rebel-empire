@@ -1,5 +1,5 @@
-import { CharacterSelection, Header } from "@/components";
-import { CharacterSelectionInside } from "@/components/CharacterSelectionInside";
+import { Header } from "@/components";
+import { CharacterSelection } from "@/components";
 
 export default function AppLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -8,7 +8,7 @@ export default function AppLayout({ children }: Readonly<{ children: React.React
       <div className="mx-auto max-w-screen-xl min-h-[calc(100vh-240px)] p-40 pb-20 box-content flex items-center justify-center">
         <div className="w-full">
           { children }
-          <CharacterSelectionInside/>
+          <CharacterSelection/>
         </div>
       </div>
     </>

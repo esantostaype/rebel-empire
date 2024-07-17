@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={`${ inter.className } ${ antonio.variable }`} suppressHydrationWarning={ true }>
+      <body className={`overflow-hidden ${ inter.className } ${ antonio.variable }`} suppressHydrationWarning={ true }>
         <Providers>
           { children }
         </Providers>
