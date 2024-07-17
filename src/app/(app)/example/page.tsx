@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useCompletion } from 'ai/react'
 import { Theme, useThemeStore } from '@/store/theme-store'
 
-export const ExamplePage = () => {
+export default function ExamplePage() {
 
   const { theme, setTheme } = useThemeStore()
   const { completion, complete } = useCompletion({
