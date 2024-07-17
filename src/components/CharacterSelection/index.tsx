@@ -6,6 +6,7 @@ import mainCharacters from '@/data/main-characters.json'
 import styles from './CharacterSelection.module.css'
 import { Button } from '@/components'
 import { toast } from 'react-toastify'
+import Cookies from 'js-cookie'
 
 export const CharacterSelection: React.FC = () => {
 
@@ -22,13 +23,13 @@ export const CharacterSelection: React.FC = () => {
       toast.error('Por favor, selecciona un personaje.')
       return
     }
-    localStorage.setItem('theme', selectedId)
-    router.push('/about')
+    Cookies.set('theme', selectedId, { expires: 365 })
+    router.push('/')
   }
   
   return (
     <>
-    <ul className={ `flex gap-8 ${ styles.list }` }>
+    <ul className={ `relative z-50 flex gap-8 ${ styles.list }` }>
       { mainCharacters.map(( character, index ) => (
         <CharacterCard
           key={ character.id }

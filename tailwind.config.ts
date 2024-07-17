@@ -7,12 +7,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundColor: {
-        skin: {
-          base: 'var(--color-base)'
-        }
-      }
+    colors: {
+      accent: 'var(--color-base)',
+      white: 'white'
+    },
+    fontFamily: {
+      antonio: 'var(--font-antonio)'
     }
   },
   plugins: [

@@ -48,15 +48,8 @@ body {
 .app{
   min-height: 100vh;
   position: relative;
-  z-index: 9;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-.link{
-  view-transition-name: demo;
+.vt-image{
+  view-transition-name: vt-image;
 }

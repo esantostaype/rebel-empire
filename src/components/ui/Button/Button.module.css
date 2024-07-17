@@ -1,4 +1,4 @@
-.content{
+.button{
   display: flex;
   height: 50px;
   font-family: var(--font-antonio);
@@ -9,11 +9,11 @@
   transition: all 0.3s ease-out;
 }
 
-.content:hover{
+.button:hover{
   filter: drop-shadow( 0 0 8px var(--color-base));
 }
 
-.content span{
+.button span{
   align-items: center;
   display: flex;
   background-color: var(--color-base);
@@ -21,7 +21,7 @@
   padding: 0 2em;
 }
 
-.content::before{
+.button::before{
   background-color: var(--color-base);
   content: '';
   clip-path: polygon(0 16px, 100% 0, 100% 100%, 0 100%);
@@ -29,7 +29,7 @@
   width: 16px;
 }
 
-.content::after{
+.button::after{
   background-color: var(--color-base);
   content: '';
   clip-path: polygon(0 0, 100% 0, 100% 34px, 0 100%);
