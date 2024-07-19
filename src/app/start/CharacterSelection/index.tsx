@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { CharacterCard } from './CharacterCard'
 import mainCharacters from '@/data/main-characters.json'
-import styles from './CharacterSelection.module.css'
 import { Button } from '@/components'
 import { toast } from 'react-toastify'
 import Cookies from 'js-cookie'
@@ -29,7 +28,7 @@ export const CharacterSelection: React.FC = () => {
   
   return (
     <>
-    <ul className={ `relative z-50 flex gap-8 ${ styles.list }` }>
+    <ul className="relative z-50 flex gap-8">
       { mainCharacters.map(( character, index ) => (
         <CharacterCard
           key={ character.id }
@@ -37,11 +36,11 @@ export const CharacterSelection: React.FC = () => {
           onSelect={ handleSelect }
           isSelected={ character.id === selectedId }
           isNotSelected={ selectedId !== null && character.id !== selectedId }
-          className={`animate-duration-500 animate-fade-up animate-delay-${ index + 1 }00`}
+          className={`animate-fade-up animate-delay-${ index + 1 }00`}
         />
       ))}
     </ul>
-    <div className="mt-20 relative animate-duration-500 animate-fade-up animate-delay-300">
+    <div className="mt-20 relative animate-fade-up animate-delay-300">
       <Button text='Ingresar' onClick={ handleSubmit } />
     </div>
     </>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Inter, Antonio } from "next/font/google"
-import "./globals.css";
+import "./globals.css"
 import { Background, ToastNotification } from "@/components"
 import { Providers } from "./provider"
 

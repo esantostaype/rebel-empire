@@ -1,9 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~@flaticon/flaticon-uicons/css/all/all";
 
 :root {
   --color-base: #485058
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .theme-luke {
@@ -38,6 +43,10 @@ h3{
   font-size: 2em;
 }
 
+p{
+  margin-bottom: 1em;
+}
+
 body {
   background-color: black;
   color: #fff;
@@ -45,19 +54,30 @@ body {
   line-height: 1.5em;
 }
 
-.app{
-  min-height: 100vh;
-  position: relative;
-}
-
-.character__thumbnail{
-  clip-path: polygon(30% 0%, 100% 0, 100% 70%, 70% 100%, 0 100%, 0% 30%);
-}
-
-.character__thumbnail:hover img{
-  transform: scale(1.2);
-}
-
 .vt-image{
   view-transition-name: vt-image;
+}
+
+.vt-characters{
+  view-transition-name: vt-characters;
+}
+
+.vt-chat{
+  view-transition-name: vt-chat;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.fadeIn {
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	animation-name: fadeIn;
 }

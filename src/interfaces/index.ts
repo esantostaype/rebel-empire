@@ -5,6 +5,7 @@ export interface MainCharacter {
   mainImage: string
   thumbnail: string
   message: string
+  chatMessage: string
 }
 
 // export interface ExtendedDocument extends Document {

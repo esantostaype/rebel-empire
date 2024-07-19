@@ -6,7 +6,8 @@
     "mainImage": "/images/luke-main.webp",
     "thumbnail": "/images/luke-thumbnail.webp",
     "welcome": "¡Bienvenido, joven Jedi!",
-    "message": "Estoy emocionado de que hayas unido fuerzas con nosotros en esta aventura intergaláctica. Prepárate para explorar los planetas más lejanos, pilotar naves legendarias y enfrentar desafíos que pondrán a prueba tu conocimiento sobre el universo de Star Wars. ¡Que la Fuerza esté contigo!"
+    "message": "Estoy emocionado de que hayas unido fuerzas con nosotros en esta aventura intergaláctica. Prepárate para explorar los planetas más lejanos, pilotar naves legendarias y enfrentar desafíos que pondrán a prueba tu conocimiento sobre el universo de Star Wars. ¡Que la Fuerza esté contigo!",
+    "chatMessage": " Si tienes alguna pregunta sobre la galaxia, los Jedi o simplemente quieres charlar, ¡pregúntame lo que sea!"
   },
   {
     "id": "vader",
@@ -15,7 +16,8 @@
     "mainImage": "/images/vader-main.webp",
     "thumbnail": "/images/vader-thumbnail.webp",
     "welcome": "¡Estás en lado oscuro de la Fuerza!",
-    "message": "Prepárate para desafiar los límites de la galaxia, explorando personajes, naves y planetas. Solo los más fuertes y sabios prevalecerán. Deja que el poder del Lado Oscuro guíe tus respuestas y demuestra tu verdadero conocimiento sobre Star Wars. No subestimes la Fuerza, pues aquellos que fallan enfrentarán las consecuencias."
+    "message": "Prepárate para desafiar los límites de la galaxia, explorando personajes, naves y planetas. Solo los más fuertes y sabios prevalecerán. Deja que el poder del Lado Oscuro guíe tus respuestas y demuestra tu verdadero conocimiento sobre Star Wars. No subestimes la Fuerza, pues aquellos que fallan enfrentarán las consecuencias.",
+    "chatMessage": "Si tienes preguntas que deseas hacer, habla ahora. La respuesta, quizás la encuentres, pero recuerda: no tolero la insensatez."
   },
   {
     "id": "yoda",
@@ -24,6 +26,7 @@
     "mainImage": "/images/yoda-main.webp",
     "thumbnail": "/images/yoda-thumbnail.webp",
     "welcome": "¡Bienvenido, joven Padawan!",
-    "message": "Emocionante será. A explorar los rincones más lejanos de la galaxia, aprender sobre personajes, naves y planetas, y poner a prueba tu conocimiento de Star Wars, debes. Paciencia y sabiduría, el camino hacia la victoria son. La Fuerza contigo estará, si en ella confías y escuchas, siempre. ¡Empezar tu aventura, ahora debes!"
+    "message": "Emocionante será. A explorar los rincones más lejanos de la galaxia, aprender sobre personajes, naves y planetas, y poner a prueba tu conocimiento de Star Wars, debes. Paciencia y sabiduría, el camino hacia la victoria son. La Fuerza contigo estará, si en ella confías y escuchas, siempre. ¡Empezar tu aventura, ahora debes!",
+    "chatMessage": "Preguntar, tú debes. Sabiduría Jedi y misterios de la Fuerza, compartir contigo, puedo. Lo que sea, pregunta debes."
   }
 ]

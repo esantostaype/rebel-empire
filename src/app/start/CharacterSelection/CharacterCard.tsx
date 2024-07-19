@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image'
 import { Tilt } from 'react-tilt'
-import styles from './CharacterSelection.module.css'
 import { useThemeStore } from '@/store/theme-store'
 import { Theme } from '@/store/theme-store'
 import { MainCharacter } from '@/interfaces'
@@ -25,13 +24,14 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character, onSelec
 
   return (
     <li
-      className={`${ className } ${styles.item} ${ isSelected ? styles.selected : ''} ${ isNotSelected ? styles.noSelected : ''}`}
+      className={`${ className } transition-all duration-500 ease-out cursor-pointer relative ${ isSelected ? 'pointer-events-none' : ''} ${ isNotSelected ? 'filter grayscale opacity-40 hover:filter-none hover:opacity-100' : ''}`}
       onClick={ handleCardClick }
     >
-      <Tilt style={{ transformStyle: "preserve-3d" }}>
-        <h2 className={ styles.name }>{ character.name }</h2>
-        <div className={ styles.image }>
+      <Tilt style={{ transformStyle: "preserve-3d" }} className="transition-all duration-500 ease-out">
+        <h2 className="transition-all duration-500 ease-out absolute bottom-10 left-[-48px] text-[3em] transform rotate-[-90deg] scale-90 w-full z-10" style={{ transform: 'translateZ(60px)' }}>{ character.name }</h2>
+        <div className="transition-all duration-500 ease-out relative w-[248px] h-[480px] z-2" style={{ clipPath: 'polygon(200px 0%, 100% 48px, 100% 100%, 48px 100%, 0% 432px, 0 0)' }}>
           <Image src={ character.image } alt={ character.name } width={ 496 } height={ 560 } priority={ true }/>
+          <div className={`transition-all duration-500 ease-out top-0 left-0 h-full w-full absolute inset-0 bg-accent mix-blend-color ${ isSelected ? 'opacity-100' : 'opacity-0'}`}></div>
         </div>
       </Tilt>
     </li>

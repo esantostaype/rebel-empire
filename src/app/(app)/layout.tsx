@@ -1,5 +1,4 @@
-import { Header } from "@/components";
-import { CharacterSelection } from "@/components";
+import { CharacterSelection, Header } from '@/components'
 
 export default function AppLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
