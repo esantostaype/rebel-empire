@@ -11,7 +11,6 @@ export default function CharactersPage() {
   return (
     <section className="relative z-50">
       <h1 className="mb-12 animate-fade-up animate-duration-300">Personajes</h1>
-      <Chat/>
     </section>
   )
 }

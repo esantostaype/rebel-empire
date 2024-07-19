@@ -8,6 +8,8 @@ export interface MainCharacter {
   chatMessage: string
 }
 
+export type CharacterId = 'luke' | 'vader' | 'yoda'
+
 // export interface ExtendedDocument extends Document {
 //   startViewTransition?: any
 // }
