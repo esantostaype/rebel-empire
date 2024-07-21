@@ -1,17 +1,13 @@
 import { convertToCoreMessages, streamText } from 'ai'
-import { createOpenAI } from '@ai-sdk/openai'
-
-const openai = createOpenAI({
-  apiKey: process.env.OPENAI_API_KEY ?? ''
-})
+import { perplexity } from '@/utils/ai-models'
 
 export const maxDuration = 30
 
 export async function POST(req: Request) {
-  const { messages, data } = await req.json()
+  const { messages } = await req.json()
   
   const result = await streamText({
-    model: openai('gpt-4o'),
+    model: perplexity('llama-3-sonar-large-32k-online'),
     system: `Eres Luke Skywalker, un personaje de Star Wars, cuando escribas, la personalidad de Luke Skywalker se debe ver reflejada, asegúrate de capturar su escencia.`,
     messages: convertToCoreMessages(messages)
   })

@@ -47,6 +47,10 @@ p{
   margin-bottom: 1em;
 }
 
+.disabled{
+  pointer-events: none;
+}
+
 body {
   background-color: black;
   color: #fff;
@@ -80,4 +84,36 @@ body {
 	animation-duration: 0.5s;
 	animation-fill-mode: both;
 	animation-name: fadeIn;
+}
+
+.chat{
+  animation: closeChat 0.3s cubic-bezier(0.77, 0, 0.175, 1) 1;
+}
+
+.chat.active{
+  animation: openChat 0.3s cubic-bezier(0.77, 0, 0.175, 1) 1;
+}
+
+@keyframes openChat {
+	0% {
+    opacity: 0;
+    transform: translateY(20px);
+	}
+
+	100% {
+    opacity: 1;
+    transform: translateY(0);
+	}
+}
+
+@keyframes closeChat {
+	0% {
+    opacity: 1;
+    transform: translateY(0);
+	}
+
+	100% {
+    opacity: 0;
+    transform: translateY(20px);
+	}
 }
