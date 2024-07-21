@@ -20,13 +20,13 @@ export const CharacterImage = ( { character } : Props ) => {
       alt={ character?.name || 'Star Wars' }
       loading='lazy'
       className={ `
+        main-image
         animate-fade
         fixed object-cover md:object-contain object-top md:object-[60%] mix-blend-lighten vt-image z-20
         ${ isHome ?
         "top-0 right-0 md:-right-[20%] lg:right-0 h-1/2 object-center md:object-right md:h-screen w-full md:w-auto" :
         "object-contain bottom-0 -right-[30%] sm:-right-[20%] md:-right-12 h-1/2 w-auto" }`
       }
-      style={{ maskImage: "linear-gradient(0deg, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%)" }}
     />
   )
 }
