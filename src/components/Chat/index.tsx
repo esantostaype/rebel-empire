@@ -10,11 +10,12 @@ import { useThemeStore } from '@/store/theme-store'
 import { useChatStore } from '@/store/chat-store'
 import { CharacterId } from '@/interfaces'
 import mainCharacters from '@/data/main-characters.json'
+import { ChatCloseButton } from './ChatCloseButton'
 
 export const Chat = () => {
 
   const { theme } = useThemeStore() as { theme: CharacterId | null }
-  const { activeChat, activeClassChat, openChat, closeChat } = useChatStore()
+  const { activeChat, activeClassChat, openChat } = useChatStore()
   const { disLinks } = useChatStore()
   const character = mainCharacters.find( char => char.id === theme )
 
@@ -79,10 +80,6 @@ export const Chat = () => {
     }
   }, [ messages ])
 
-  const handleCloseChat = () => {
-    closeChat()
-  }
-
   const handleOpenChat = () => {
     openChat()
   }
@@ -95,39 +92,33 @@ export const Chat = () => {
     : "backdrop-blur-lg bg-[rgba(0,0,0,0.8)] fadeIn fadeIn z-[90] fixed bottom-0 md:bottom-8 right-0 md:right-36 h-screen md:h-[640px] w-full md:w-[480px] flex flex-col justify-between text-sm border-[1px] border-[rgba(255,255,255,0.1)] md:rounded-2xl"
 
   const contentClasses = isHome 
-    ? "w-full px-6 px-6 md:px-16 lg:px-20 2xl:w-[1280px] xl:w-[1024px] h-[calc(100vh-20rem)] mx-auto flex-1 flex flex-col xl:box-content"
-    : "w-full p-6 pt-4 flex flex-1 flex-col h-[640px]"
+    ? "w-full px-6 md:px-16 lg:px-20 2xl:w-[1280px] xl:w-[1024px] h-[calc(100vh-20rem)] mx-auto flex-1 flex flex-col xl:box-content"
+    : "w-full md:p-6 md:pt-4 px-6 flex flex-1 flex-col h-[640px]"
 
   const sizeClasses = isHome
-  ? "flex flex-col w-full md:w-[75%] 2xl:w-[60%] xl:mb-8"
-  : "flex flex-col w-full"
-
-  const closeChatButtonClasses = isHome
-  ? "top-24 left-24"
-  : "-top-2 -right-2 bg-slate-800 h-10 w-10 justify-center rounded-[100px] hover:bg-slate-700"
+  ? "relative flex flex-col w-full md:w-[75%] 2xl:w-[60%] xl:mb-8"
+  : "relative flex flex-col w-full"
 
   return (
     <>
     { !activeChat &&
-      <button className={ `transition-all fixed z-[9999] hover:scale-110 flex items-center bottom-6 md:bottom-8 right-6 md:right-36 bg-accent h-16 w-16 justify-center rounded-[100px]` } onClick={ handleOpenChat }>
+      <button className={ `fadeIn transition-all fixed z-[9999] hover:scale-110 flex items-center bottom-6 md:bottom-8 right-6 md:right-36 bg-accent h-16 w-16 justify-center rounded-[100px]` } onClick={ handleOpenChat }>
         <i className="fi fi-rr-messages text-2xl mt-2"></i>
       </button>
     }
     { activeChat &&
       <section className={`${ wrapperClasses } ${ activeClassChat ? "active" : "" } chat`}>
-        <button className={ `transition-all absolute flex items-center ${ closeChatButtonClasses }` } onClick={ handleCloseChat }>
-          <i className="fi fi-rr-cross-small text-xl mt-2"></i>
-          { isHome && "Cerrar Chat" }
-        </button>
         <div className={ contentClasses }>
           { theme && showTopics[ theme ] ? (
-            <div ref={ scrollRef } className={`${ sizeClasses } ${ isHome ? "mt-20" : "" } flex-1 justify-center`}>
+            <div ref={ scrollRef } className={`${ sizeClasses } ${ isHome ? "mt-20" : "mt-20 md:mt-0" } flex-1 justify-center`}>
+              <ChatCloseButton/>
               <ChatTopics onTopicClick={ handlePredefinedTopics } />
             </div>
             ) : (
             <div ref={ scrollRef } className={`${ sizeClasses } ${ isHome ? "mt-20 mb-6 md:mb-12" : "mt-20 md:mt-0" } flex-1 overflow-y-auto no-scrollbar`}
               style={{ maskImage: "linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)" }}
             >
+              <ChatCloseButton/>
               <div className={`flex flex-col gap-4 flex-1 ${ isHome ? "py-4 md:py-8" : "py-4" }`}>
                 <ChatMessageList messages={ messages } characterId={ theme } />
               </div>

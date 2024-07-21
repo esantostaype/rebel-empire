@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { Message } from 'ai/react'
 import mainCharacters from '@/data/main-characters.json'

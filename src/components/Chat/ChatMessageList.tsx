@@ -1,5 +1,3 @@
-'use client'
-
 import { Message } from 'ai/react'
 import { ChatMessageItem } from './ChatMessageItem'
 import { CharacterId } from '@/interfaces'

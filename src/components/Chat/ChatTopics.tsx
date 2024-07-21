@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from 'react'
 import { getTopics } from '@/actions/generate-topics'
 import { useThemeStore } from '@/store/theme-store'
@@ -27,22 +25,22 @@ export const ChatTopics = ({ onTopicClick }: ChatTopicsProps ) => {
   const { theme } = useThemeStore() as { theme: CharacterId | null }
   const character = mainCharacters.find( char => char.id === theme )
   
-  const fetchTopics = async () => {
-    try {
-      setLoading( true )
-      const response: GetChatTopicsResponse = await getTopics()
-      const topicsArray = response.topics.topics.map(topic => topic.item)
-      setTopics( topicsArray )
-    } catch ( error ) {
-      console.error('Error al cargar los Tópicos:', error)
-    } finally {
-      setLoading( false )
-    }
-  }
+  // const fetchTopics = async () => {
+  //   try {
+  //     setLoading( true )
+  //     const response: GetChatTopicsResponse = await getTopics()
+  //     const topicsArray = response.topics.topics.map(topic => topic.item)
+  //     setTopics( topicsArray )
+  //   } catch ( error ) {
+  //     console.error('Error al cargar los Tópicos:', error)
+  //   } finally {
+  //     setLoading( false )
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchTopics()
-  }, [ character?.name ])
+  // useEffect(() => {
+  //   fetchTopics()
+  // }, [ character?.name ])
 
   return (
     <>
