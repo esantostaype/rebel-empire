@@ -1,17 +1,6 @@
-import Image from 'next/image'
-import { MainTitle } from '@/components'
-import { Pagination } from '@/components/ui/Pagination'
+import { Grid, MainTitle } from '@/components'
 import { Character } from '@/interfaces'
 import { getCharacters } from '@/lib/starwars-api'
-import { extractId } from '@/utils'
-import { Link } from 'next-view-transitions'
-import { Grid } from '@/components/ui/Grid'
-
-type Props = {
-  searchParams: {
-    page: string
-  }
-}
 
 export async function generateStaticParams() {
   const data = await getCharacters()
@@ -23,18 +12,18 @@ export async function generateStaticParams() {
   return paramsArray
 }
 
-export default async function CharactersPage({ searchParams }: Props) {
+export default async function CharactersPage() {
 
-  const data = await getCharacters( searchParams.page )
+  const data = await getCharacters()
   const characters: Character[] = data.results
 
-  const page = +searchParams.page || 1
+  const pageNumber = 1
   const totalPages = Math.ceil( data.count / 10 )
 
   return (
     <section className="md:pr-32 relative">
       <MainTitle title="Personajes" />
-      <Grid data={ characters } page={ page } link='/characters' totalPages={ totalPages } />
+      <Grid data={ characters } pageNumber={ pageNumber } link='/characters' totalPages={ totalPages } />
     </section>
   )
 }

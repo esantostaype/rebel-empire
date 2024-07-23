@@ -1,11 +1,6 @@
-import { MainTitle } from '@/components'
-import { Pagination } from '@/components/ui/Pagination'
+import { Grid, MainTitle } from '@/components'
 import { Character } from '@/interfaces'
 import { getCharacters } from '@/lib/starwars-api'
-import Image from 'next/image'
-import { extractId } from '@/utils'
-import { Link } from 'next-view-transitions'
-import { cookies } from 'next/headers'
 
 type Props = {
   params: {
@@ -23,37 +18,18 @@ export async function generateStaticParams() {
   return paramsArray
 }
 
-export default async function Page({ params }: Props) {
-
-  const theme = cookies().get('theme')
+export default async function CharactersPage({ params }: Props) {
 
   const data = await getCharacters( params.page )
   const characters: Character[] = data.results
-  
-  const page = +params.page || 1
-  const link = '/characters'
+
+  const pageNumber = +params.page || 1
   const totalPages = Math.ceil( data.count / 10 )
 
   return (
-    <>
+    <section className="md:pr-32 relative">
       <MainTitle title="Personajes" />
-      <div className="grid grid-cols-5 gap-4">
-      { characters.map(( character ) => {
-          const id = extractId( character.url )
-          return (
-            <Link href={`/characters/${id}`} key={character.name}>
-              <p>{id}. {character.name}</p>
-              <Image 
-                src={`/images/characters/${id}.webp`} 
-                width={256} 
-                height={256} 
-                alt={character.name}
-              />
-            </Link>
-          )
-        })}
-      </div>
-      <Pagination page={ page } totalPages={ totalPages } link={ link } />
-    </>
+      <Grid data={ characters } pageNumber={ pageNumber } link='/characters' totalPages={ totalPages } />
+    </section>
   )
 }

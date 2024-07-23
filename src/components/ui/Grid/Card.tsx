@@ -5,13 +5,11 @@ import Image from "next/image"
 
 interface GridProps {
   data: DataGrid
-  index: number
 }
 
-export const Card = ({ data, index }: GridProps) => {
+export const Card = ({ data }: GridProps) => {
 
   const id = extractId( data.url )
-  const delay = ( index % 10 ) * 100
   
   return (
     <Link href={`/characters/${ id }`} key={ data.name } className="relative flex flex-col group transition-all transition-custom-ease duration-default hover:scale-[1.1]" >

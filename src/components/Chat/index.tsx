@@ -18,7 +18,7 @@ export const Chat = () => {
   const isHome = useIsHome()
 
   const { theme } = useThemeStore() as { theme: CharacterId | null }
-  const { activeChat, activeClassChat, openChat } = useChatStore()
+  const { activeChat, activeClassChat, openChat, closeChat } = useChatStore()
   const { disLinks } = useChatStore()
   const character = mainCharacters.find( char => char.id === theme )
 
@@ -70,6 +70,7 @@ export const Chat = () => {
   }
 
   const scrollRef = useRef<HTMLDivElement>(null)
+  const chatRef = useRef<HTMLDivElement>(null)
   
   useEffect(() => {
     if ( scrollRef.current ) {
@@ -86,6 +87,33 @@ export const Chat = () => {
   const handleOpenChat = () => {
     openChat()
   }
+
+  const handleCloseChat = () => {
+    closeChat()
+  }
+
+  const handleKeydown = ( e: KeyboardEvent ) => {
+    if ( e.key === 'Escape' ) {
+      handleCloseChat()
+    }
+  }
+
+  const handleClickOutside = ( e: MouseEvent ) => {
+    if ( chatRef.current && !chatRef.current.contains( e.target as Node )) {
+      handleCloseChat()
+    }
+  }
+
+  useEffect(() => {
+    if ( activeChat ) {
+      document.addEventListener( 'keydown', handleKeydown )
+      document.addEventListener( 'mousedown', handleClickOutside )
+    }
+    return () => {
+      document.removeEventListener( 'keydown', handleKeydown )
+      document.removeEventListener( 'mousedown', handleClickOutside )
+    }
+  }, [ activeChat ])
 
   const wrapperClasses = isHome 
     ? "backdrop-blur-lg md:backdrop-blur-none bg-[rgba(0,0,0,0.4)] md:bg-transparent fadeIn z-[90] fixed top-0 left-0 h-screen w-full flex flex-col justify-between text-sm"
@@ -107,7 +135,7 @@ export const Chat = () => {
       </button>
     }
     { activeChat &&
-      <section className={`${ wrapperClasses } ${ activeClassChat ? "active" : "" } chat`}>
+      <section className={`${ wrapperClasses } ${ activeClassChat ? "active" : "" } chat`} ref={ chatRef }>
         <div className={ contentClasses }>
           <ChatCloseButton/>
           { theme && showTopics[ theme ] ? (
