@@ -23,22 +23,22 @@ export const ChatTopics = ({ onTopicClick }: ChatTopicsProps ) => {
   const { theme } = useThemeStore() as { theme: CharacterId | null }
   const character = mainCharacters.find( char => char.id === theme )
   
-  // const fetchTopics = async () => {
-  //   try {
-  //     setLoading( true )
-  //     const response: GetChatTopicsResponse = await getTopics(`${ character?.name }`)
-  //     const topicsArray = response.topics.map(topic => topic.item)
-  //     setTopics( topicsArray )
-  //   } catch ( error ) {
-  //     console.error('Error al cargar los Tópicos:', error)
-  //   } finally {
-  //     setLoading( false )
-  //   }
-  // }
+  const fetchTopics = async () => {
+    try {
+      setLoading( true )
+      const response: GetChatTopicsResponse = await getTopics(`${ character?.name }`)
+      const topicsArray = response.topics.map(topic => topic.item)
+      setTopics( topicsArray )
+    } catch ( error ) {
+      console.error('Error al cargar los Tópicos:', error)
+    } finally {
+      setLoading( false )
+    }
+  }
 
-  // useEffect(() => {
-  //   fetchTopics()
-  // }, [ character?.name, theme ])
+  useEffect(() => {
+    fetchTopics()
+  }, [ character?.name, theme ])
 
   return (
     <>
