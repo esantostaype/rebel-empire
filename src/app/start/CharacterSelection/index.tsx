@@ -26,7 +26,7 @@ export const CharacterSelection: React.FC = () => {
 
   return (
     <>
-      <ul className="relative z-50 flex gap-8">
+      <ul className="-my-28 sm:-my-12 md:-my-8 lg:-my-0 scale-[0.4] sm:scale-[0.6] md:scale-[0.75] lg:scale-100 relative z-50 flex gap-8">
         {mainCharacters.map((character, index) => (
           <CharacterCard
             key={character.id}
@@ -38,7 +38,7 @@ export const CharacterSelection: React.FC = () => {
           />
         ))}
       </ul>
-      <div className="mt-20 relative animate-fade-up animate-delay-300">
+      <div className="mt-4 md:mt-20 relative animate-fade-up animate-delay-300">
         <Button text='Ingresar' onClick={handleSubmit} />
       </div>
     </>

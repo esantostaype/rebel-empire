@@ -1,0 +1,5 @@
+@for $i from 1 through 83 {
+  .vt-char-image-#{$i} {
+    view-transition-name: vt-char-image-#{$i}
+  }
+}

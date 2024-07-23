@@ -13,7 +13,18 @@ const config: Config = {
         white: 'white'
       },
       fontFamily: {
+        inter: 'var(--font-inter)',
         antonio: 'var(--font-antonio)'
+      },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '4/5': '4 / 5',
+      },
+      transitionTimingFunction: {
+        'custom-ease': 'cubic-bezier(.75,0,.25,1)',
+      },
+      transitionDuration: {
+        'default': '400ms',
       }
     }
   },

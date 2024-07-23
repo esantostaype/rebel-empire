@@ -23,7 +23,7 @@ export const CharacterSelection = () => {
     <ul className={`${ disableLinks ? "disabled" : "" } hidden fixed bottom-8 gap-4 md:flex flex-col right-8 z-[999] vt-characters`}>
       { filteredCharacters.map(( character ) => (
         <li key={ character.id } onClick={ () => handleSelect( character.id ) } className="cursor-pointer">
-          <div style={{ clipPath: 'polygon(30% 0%, 100% 0, 100% 70%, 70% 100%, 0 100%, 0% 30%)' }}>
+          <div style={{ clipPath: 'path("M88,96H16c-6.2-6.2-9.8-9.8-16-16V8c0-4.4,3.6-8,8-8h72c6.2,6.2,9.8,9.8,16,16v72C96,92.4,92.4,96,88,96z")' }}>
             <Image
               src={ character.thumbnail }
               width={ 128 }
@@ -35,7 +35,7 @@ export const CharacterSelection = () => {
         </li>
       ))}
     </ul>
-    <div className="h-screen w-full top-0 left-0">
+    <div>
       { characterSelected?.id === 'luke' && 
         <CharacterImage character={ characterSelected } />
       }

@@ -1,14 +1,11 @@
-export const apiUrl = process.env.STARWARS_API
+export const apiUrl = "https://swapi.dev/api/"
 
-interface FetchProps {
-  url: string
-}
-
-export async function fetchData( { url }: FetchProps ) {
+export const getCharacters = async () => {
+  const baseUrl = `${ apiUrl }/people`
   try {
-    const response = await fetch(`${ apiUrl }${ url }`)
-    const result = await response.json()
-    return result
+    const response = await fetch( baseUrl )
+    const characters = await response.json()
+    return characters.results
   } catch ( error ) {
     return { ok: false, errors: 'Error de red o de servidor', data: null }
   }

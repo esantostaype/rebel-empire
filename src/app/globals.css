@@ -54,8 +54,13 @@ p{
 body {
   background-color: black;
   color: #fff;
+  font-family: var(--font-inter);
   font-size: 16px;
   line-height: 1.5em;
+}
+
+.isHome .content-page{
+  justify-content: center;
 }
 
 .vt-image{
@@ -68,6 +73,14 @@ body {
 
 .vt-chat{
   view-transition-name: vt-chat;
+}
+
+.vt-char-image-1{
+  view-transition-name: vt-char-image-1;
+}
+
+.vt-char-image-2{
+  view-transition-name: vt-char-image-2;
 }
 
 @keyframes fadeIn {
@@ -118,12 +131,12 @@ body {
 	}
 }
 
-.main-image{
+.main-image.isHome{
   mask-image: linear-gradient(0deg, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%);
 }
 
 @media ( min-width: 768px ) { 
-  .main-image{
+  .main-image.isHome{
     mask-image: none;
   }
 }

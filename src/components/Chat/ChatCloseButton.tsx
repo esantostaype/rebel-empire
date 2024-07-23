@@ -1,20 +1,19 @@
 import { usePathname } from 'next/navigation'
 import { useChatStore } from '@/store/chat-store'
+import { useIsHome } from '@/utils/pathnames'
 
 export const ChatCloseButton = () => {
   
   const { closeChat } = useChatStore()
-
-  const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isHome = useIsHome()
 
   const handleCloseChat = () => {
     closeChat()
   }
 
   const closeButtonClasses = isHome
-  ? "top-4 right-0 h-10 w-10 fadeIn bg-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.1)] justify-center rounded-[100px] transition-all absolute flex items-center z-[9999]"
-  : "top-4 right-0 md:-top-2 md:-right-4 h-10 w-10 fadeIn bg-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.1)] justify-center rounded-[100px] transition-all absolute flex items-center z-[9999]"
+  ? "top-[6rem] md:top-[7rem] right-2 md:right-auto md:left-[75%] 2xl:left-[60%] h-10 w-10 fadeIn bg-slate-800 shadow-2xl hover:bg-slate-700 shadow- justify-center rounded-[100px] transition-all absolute flex items-center z-[9999]"
+  : "top-[6rem] md:top-2 right-2 h-10 w-10 fadeIn bg-slate-800 shadow-2xl hover:bg-slate-700 shadow- justify-center rounded-[100px] transition-all absolute flex items-center z-[9999]"
 
   return (
     <button className={ closeButtonClasses } onClick={ handleCloseChat }>

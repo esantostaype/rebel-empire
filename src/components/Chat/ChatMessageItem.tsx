@@ -3,6 +3,7 @@ import { Message } from 'ai/react'
 import mainCharacters from '@/data/main-characters.json'
 import { CharacterId } from '@/interfaces'
 import { usePathname } from 'next/navigation'
+import { useIsHome } from '@/utils/pathnames'
 
 interface ChatMessageItemProps {
   message: Message
@@ -13,8 +14,7 @@ export const ChatMessageItem = ({ message, characterId }: ChatMessageItemProps )
 
   const character = mainCharacters.find( char => char.id === characterId )
   const roleUser = message.role === 'user'
-  const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isHome = useIsHome()
 
   return (
     <div className={ roleUser ? "text-right" : ""}>
