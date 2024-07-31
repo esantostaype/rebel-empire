@@ -83,6 +83,10 @@ body {
   view-transition-name: vt-char-image-2;
 }
 
+.text-stroke{
+  -webkit-text-stroke: 2px white;
+}
+
 @keyframes progress {
 	0% {
 		transform: translateX(-100%);

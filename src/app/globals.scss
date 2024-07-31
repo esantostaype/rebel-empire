@@ -15,3 +15,9 @@
     view-transition-name: vt-planets-image-#{$i}
   }
 }
+
+@for $i from 1 through 83 {
+  .vt-planets-title-#{$i} {
+    view-transition-name: vt-planets-title-#{$i}
+  }
+}

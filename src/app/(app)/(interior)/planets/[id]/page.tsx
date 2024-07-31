@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { name } = await getPlanetById( params.id )
   return {
     title: `Planeta ${ name } | Rebel Empire AI`,
-    description: `Explora a fondo el planeta ${ name }. Obtén su información escencial y también información específica generada por IA.`,
+    description: `Explora y obtén información detallada del planeta ${ name }.`,
   }
 }
 
@@ -36,22 +36,15 @@ export default async function PlanetPage({ params }: Props) {
   const id = extractId( planet.url )
 
   return (
-    <section className="relative md:flex gap-8 lg:gap-12 2xl:gap-16 items-start justify-between">
-      <div className="flex md:flex-col flex-wrap gap-2 md:gap-6 md:text-right mt-8 md:mt-0 flex-[0_0_160px]">
-      </div>
-      <div className="flex flex-col sm:flex-row gap-8 lg:gap-12 2xl:gap-16 items-start">
-        <Image 
-          src={`/images/planets/${ params.id }.webp`} 
-          width={ 640 } 
-          height={ 640 } 
-          alt={ planet.name }
-          className={`vt-planets-image-${ params.id }`}
-        />
-        <div className="flex flex-1 items-start gap-16 2xl:gap-20 justify-between">
-        </div>
-      </div>
-      <div className="flex md:flex-col flex-wrap gap-2 md:gap-6 md:text-right mt-8 md:mt-0 flex-[0_0_160px]">
-      </div>
+    <section className="flex justify-center relative">
+      <h1 className={`text-stroke leading-[15rem] text-transparent text-[16rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full text-center vt-planets-title-${ params.id }`}>{ planet.name }</h1>
+      <Image 
+        src={`/images/planets/${ params.id }.webp`} 
+        width={ 640 } 
+        height={ 640 } 
+        alt={ planet.name }
+        className={`vt-planets-image-${ params.id }`}
+      />
     </section>
   )
 }
