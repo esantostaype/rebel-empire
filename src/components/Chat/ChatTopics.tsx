@@ -60,7 +60,7 @@ export const ChatTopics = ({ onTopicClick }: ChatTopicsProps ) => {
           <li key={index} className="flex flex-col flex-1 sm:flex-[0_0_calc(50%-0.5rem)]">
             <button
               onClick={() => onTopicClick( topic )}
-              className="text-left bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.1)] transition-all py-6 px-10 flex-1 rounded-md backdrop-blur-lg"
+              className="text-left bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] transition-all py-6 px-10 flex-1 rounded-md backdrop-blur-lg"
             >
               { topic }
             </button>

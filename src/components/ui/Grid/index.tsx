@@ -7,16 +7,17 @@ interface GridProps {
   pageNumber: number
   totalPages: number
   link?: string
+  transparentImage?: boolean
 }
 
-export const Grid = ({ data, pageNumber, totalPages, link }: GridProps) => {  
+export const Grid = ({ data, pageNumber, totalPages, link, transparentImage }: GridProps) => {  
   
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 gap-y-7 md:gap-x-8 md:gap-y-11 mb-16">
+      <div className={`${ transparentImage ? "mb-8 mt-4" : "mb-16" } grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 gap-y-7 md:gap-x-8 md:gap-y-11`}>
       { data.map(( character, index ) => {
           return (
-            <Card key={ character.name } data={ character } />
+            <Card key={ character.name } data={ character } link={ link } transparentImage={ transparentImage } />
           )
         })}
       </div>      

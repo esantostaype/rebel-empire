@@ -4,7 +4,7 @@
 @import "~@flaticon/flaticon-uicons/css/all/all";
 
 :root {
-  --color-base: #485058
+  --color-base: #485058;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -83,6 +83,12 @@ body {
   view-transition-name: vt-char-image-2;
 }
 
+@keyframes progress {
+	0% {
+		transform: translateX(-100%);
+	}
+}
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
@@ -138,5 +144,11 @@ body {
 @media ( min-width: 768px ) { 
   .main-image.isHome{
     mask-image: none;
+  }
+}
+
+@media ( min-width: 640px ) {
+  .char-image{
+    clip-path: path("M376,500H48c-18.7-18.7-29.3-29.3-48-48V24C0,10.7,10.7,0,24,0h328c18.7,18.7,29.3,29.3,48,48v428 C400,489.3,389.3,500,376,500z");
   }
 }

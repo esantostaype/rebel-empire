@@ -1,9 +1,10 @@
 type Props = {
   title: string
+  className?: string
 }
 
-export const MainTitle = ({ title }: Props) => {
+export const MainTitle = ({ title, className }: Props) => {
   return (
-    <h1 className="text-accent md:-rotate-90 origin-top-right md:top-0 md:right-[6rem] md:absolute z-50 mb-6 md:mb-0 text-3xl md:text-[6rem] md:opacity-25 leading-none">{ title }</h1>
+    <h1 className={`${ className } text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[6rem] leading-none`}>{ title }</h1>
   )
 }

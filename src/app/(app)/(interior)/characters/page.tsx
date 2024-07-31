@@ -12,6 +12,13 @@ export async function generateStaticParams() {
   return paramsArray
 }
 
+export async function generateMetadata() {
+  return {
+    title: `Personajes | Rebel Empire AI`,
+    description: `Descubre los personajes icónicos de Star Wars.`
+  }
+}
+
 export default async function CharactersPage() {
 
   const data = await getCharacters()
@@ -22,8 +29,10 @@ export default async function CharactersPage() {
 
   return (
     <section className="md:pr-32 relative">
-      <MainTitle title="Personajes" />
-      <Grid data={ characters } pageNumber={ pageNumber } link='/characters' totalPages={ totalPages } />
+      <div className="text-accent md:-rotate-90 origin-top-right md:top-0 md:right-[6rem] md:absolute z-50 mb-6 md:mb-0 md:opacity-25">
+        <MainTitle title="Personajes" />
+      </div>
+      <Grid data={ characters } pageNumber={ pageNumber } link='characters' totalPages={ totalPages } />
     </section>
   )
 }

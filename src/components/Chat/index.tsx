@@ -1,17 +1,17 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { usePathname } from 'next/navigation'
 import { useChat } from 'ai/react'
 import { ChatTopics } from './ChatTopics'
 import { ChatForm } from './ChatForm'
 import { ChatMessageList } from './ChatMessageList'
+import { ChatOpenButton } from './ChatOpenButton'
+import { ChatCloseButton } from './ChatCloseButton'
 import { useThemeStore } from '@/store/theme-store'
 import { useChatStore } from '@/store/chat-store'
 import { CharacterId } from '@/interfaces'
-import mainCharacters from '@/data/main-characters.json'
-import { ChatCloseButton } from './ChatCloseButton'
 import { useIsHome } from '@/utils/pathnames'
+import mainCharacters from '@/data/main-characters.json'
 
 export const Chat = () => {
 
@@ -36,7 +36,7 @@ export const Chat = () => {
   }
 
   const { messages, input, setInput, handleInputChange, handleSubmit, isLoading } = useChat({
-    api: getApiEndpoint(theme),
+    api: getApiEndpoint( theme ),
     keepLastMessageOnError: true
   })
 
@@ -84,10 +84,6 @@ export const Chat = () => {
     }
   }, [ messages ])
 
-  const handleOpenChat = () => {
-    openChat()
-  }
-
   const handleCloseChat = () => {
     closeChat()
   }
@@ -98,20 +94,20 @@ export const Chat = () => {
     }
   }
 
-  const handleClickOutside = ( e: MouseEvent ) => {
-    if ( chatRef.current && !chatRef.current.contains( e.target as Node )) {
-      handleCloseChat()
-    }
-  }
+  // const handleClickOutside = ( e: MouseEvent ) => {
+  //   if ( chatRef.current && !chatRef.current.contains( e.target as Node )) {
+  //     handleCloseChat()
+  //   }
+  // }
 
   useEffect(() => {
     if ( activeChat ) {
       document.addEventListener( 'keydown', handleKeydown )
-      document.addEventListener( 'mousedown', handleClickOutside )
+      // document.addEventListener( 'mousedown', handleClickOutside )
     }
     return () => {
       document.removeEventListener( 'keydown', handleKeydown )
-      document.removeEventListener( 'mousedown', handleClickOutside )
+      // document.removeEventListener( 'mousedown', handleClickOutside )
     }
   }, [ activeChat ])
 
@@ -130,9 +126,7 @@ export const Chat = () => {
   return (
     <>
     { !activeChat &&
-      <button className={ `fadeIn transition-all fixed z-[9999] hover:scale-110 flex items-center bottom-6 md:bottom-8 right-6 md:right-36 bg-accent h-16 w-16 justify-center rounded-[100px] hover:drop-shadow-[0_0_8px_var(--color-base)]` } onClick={ handleOpenChat }>
-        <i className="fi fi-rr-messages text-2xl mt-2"></i>
-      </button>
+      <ChatOpenButton/>
     }
     { activeChat &&
       <section className={`${ wrapperClasses } ${ activeClassChat ? "active" : "" } chat`} ref={ chatRef }>
@@ -143,7 +137,7 @@ export const Chat = () => {
               <ChatTopics onTopicClick={ handlePredefinedTopics } />
             </div>
             ) : (
-            <div ref={ scrollRef } className={`${ sizeClasses } ${ isHome ? "mt-20 mb-6 md:mb-12" : "mt-20 md:mt-0" } flex-1 overflow-y-auto no-scrollbar`}
+            <div ref={ scrollRef } className={`${ sizeClasses } ${ isHome ? "mt-20 mb-6 md:mb-12" : "mt-20 md:mt-0" } flex-1 overflow-y-auto no-scrollbar scroll-smooth`}
               style={{ maskImage: "linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)" }}
             >
               <div className={`flex flex-col gap-4 flex-1 ${ isHome ? "py-4 md:py-8" : "py-4" }`}>

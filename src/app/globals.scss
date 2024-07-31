@@ -1,5 +1,17 @@
 @for $i from 1 through 83 {
-  .vt-char-image-#{$i} {
-    view-transition-name: vt-char-image-#{$i}
+  .vt-characters-image-#{$i} {
+    view-transition-name: vt-characters-image-#{$i}
+  }
+}
+
+@for $i from 1 through 83 {
+  .vt-characters-title-#{$i} {
+    view-transition-name: vt-characters-title-#{$i}
+  }
+}
+
+@for $i from 1 through 60 {
+  .vt-planets-image-#{$i} {
+    view-transition-name: vt-planets-image-#{$i}
   }
 }

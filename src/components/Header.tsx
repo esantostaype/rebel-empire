@@ -17,7 +17,6 @@ export const Header = () => {
       <nav className="hidden md:block flex-1 font-antonio font-light tracking-wide uppercase">
         <ul className="flex justify-center gap-12">
           <li><Link href="/characters" onClick={ handleCloseChat }>Personajes</Link></li>
-          <li><Link href="/starships" onClick={ handleCloseChat }>Naves</Link></li>
           <li><Link href="/planets" onClick={ handleCloseChat }>Planetas</Link></li>
           <li><Link href="/mini-stories" onClick={ handleCloseChat }>Mini Historias</Link></li>
         </ul>
