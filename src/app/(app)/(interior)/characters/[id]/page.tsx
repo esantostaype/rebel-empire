@@ -41,7 +41,7 @@ export default async function CharacterPage({ params }: Props) {
     <section className="relative md:flex gap-8 lg:gap-12 2xl:gap-16 items-start justify-between">
       <div className="flex flex-col sm:flex-row gap-8 lg:gap-12 2xl:gap-16 items-start">
         <Image 
-          src={`/images/characters/${ params.id }.jpeg`} 
+          src={`/images/characters/${ params.id }.webp`} 
           width={ 400 } 
           height={ 500 } 
           alt={ character.name }
