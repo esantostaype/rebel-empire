@@ -17,3 +17,12 @@ export function extractId( url: string ): number | null {
   const match = url.match(/\/(\d+)\/?$/)
   return match ? parseInt( match[1], 10 ) : null
 }
+
+export function formatNumberWithKm( number: number ) {
+  if (isNaN(number)) {
+    return 'unknown'
+  }
+  const formatter = new Intl.NumberFormat('en-US')
+  const formattedNumber = formatter.format(number)
+  return formattedNumber
+}

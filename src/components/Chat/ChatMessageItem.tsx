@@ -2,8 +2,8 @@ import Image from 'next/image'
 import { Message } from 'ai/react'
 import mainCharacters from '@/data/main-characters.json'
 import { CharacterId } from '@/interfaces'
-import { usePathname } from 'next/navigation'
 import { useIsHome } from '@/utils/pathnames'
+import Markdown from 'react-markdown'
 
 interface ChatMessageItemProps {
   message: Message
@@ -27,7 +27,9 @@ export const ChatMessageItem = ({ message, characterId }: ChatMessageItemProps )
                 : <Image src={`${character?.thumbnail}`} alt={`${character?.name}`} width={32} height={32} />
             }            
           </div>
-          { message.content }
+          <div className="markdown">
+            <Markdown>{ message.content }</Markdown>
+          </div>
         </div>
         <div className={`absolute top-0 left-0 w-full h-full z-[1] backdrop-blur-lg
           ${ roleUser ? "bg-accent opacity-20" : "bg-[rgba(120,120,120,0.16)]"}`}>

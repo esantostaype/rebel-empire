@@ -37,7 +37,7 @@ export const GenerateData = ({ character } : Props) => {
     }
   }
 
-  const { object, submit } = useObject({
+  const { object, submit, isLoading } = useObject({
     api: getApiEndpoint( theme ),
     schema: characterDataSchema
   })

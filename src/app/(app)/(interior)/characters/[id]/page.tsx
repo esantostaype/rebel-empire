@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { getCharacterById, getCharacters } from '@/lib/starwars-api'
 import { Character } from '@/interfaces'
-import Image from 'next/image'
-import { MainTitle } from '@/components'
+import { MainTitle, InfoItem } from '@/components'
+import { Homeworld, GenerateData } from './ui'
 import { extractId } from '@/utils'
-import { Homeworld, InfoItem, GenerateData } from './ui'
 
 interface Props {
   params: {
