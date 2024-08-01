@@ -34,10 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CharacterPage({ params }: Props) {
 
   const character: Character = await getCharacterById( params.id )
-  const id = extractId( character.url )
-  const planetId = extractId( character.homeworld )
-
-  // scale-75 mx-[-50px] my-[-62.5px]
+  const id = character.url ? extractId( character.url ) : null
+  const planetId = character.homeworld ? extractId( character.homeworld ) : null
 
   return (
     <section className="relative md:flex gap-8 lg:gap-12 2xl:gap-16 items-start justify-between">
