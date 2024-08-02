@@ -16,13 +16,13 @@ export const Card = ({ data, link, transparentImage }: GridProps) => {
   
   return (
     <Link href={`/${ link }/${ id }`} key={ data.name } className={`${ transparentImage ? "mb-8" : "" } relative flex flex-col group transition-all transition-custom-ease duration-default hover:scale-[1.1]`}>
-      <div className={`${ transparentImage ? "p-8 pb-2 -mt-1" : `duration-default vt-${ link }-image-${ id } overflow-hidden` } bg-slate-700 group-hover:bg-slate-900 transition-all transition-custom-ease duration-default rounded-t-lg mb-[-1px] relative z-10`}>
+      <div className={`${ transparentImage ? "p-4 md:p-8 md:pb-2 -mt-1" : `duration-default vt-${ link }-image-${ id } overflow-hidden` } bg-slate-700 group-hover:bg-slate-900 transition-all transition-custom-ease duration-default rounded-t-lg mb-[-1px] relative z-10`}>
         <Image 
           src={`/images/${ link }/${ id }.webp`} 
-          width={ 256 } 
-          height={ 256 } 
+          width={ 560 } 
+          height={ 560 } 
           alt={ data.name }
-          className={ `${ transparentImage ? `-mt-16 duration-default vt-${ link }-image-${ id } group-hover:scale-[1.05]` : "aspect-4/3 group-hover:scale-[1.15]" } w-full object-cover group-hover:object-top transition-all transition-custom-ease duration-default` }
+          className={ `${ transparentImage ? `-mt-12 md:-mt-16 duration-default vt-${ link }-image-${ id } group-hover:scale-[1.05]` : "aspect-4/3 group-hover:scale-[1.15]" } w-full object-cover group-hover:object-top transition-all transition-custom-ease duration-default` }
         />
       </div>
       <div className="bg-slate-700 px-4 py-3 md:px-6 md:py-4 flex-1 relative group-hover:bg-slate-900 transition-all transition-custom-ease duration-default">

@@ -14,7 +14,7 @@ export const Grid = ({ data, pageNumber, totalPages, link, transparentImage }: G
   
   return (
     <>
-      <div className={`${ transparentImage ? "mb-8 mt-4" : "mb-16" } grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 gap-y-7 md:gap-x-8 md:gap-y-11`}>
+      <div className={`${ transparentImage ? "mb-8 mt-16 md:mt-4" : "mb-16" } grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 gap-y-7 md:gap-x-8 md:gap-y-11`}>
       { data.map(( character, index ) => {
           return (
             <Card key={ character.name } data={ character } link={ link } transparentImage={ transparentImage } />

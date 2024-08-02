@@ -27,6 +27,14 @@ export interface Character {
   url: string
 }
 
+export interface CharacterData {
+  biography?: string
+  personality?: { item: string }[]
+  popularityLevel?: number
+  curiosities?: { title: string, description: string }[]
+  actor?: string
+}
+
 export interface Planet {
   type: Planet
   name: string
@@ -43,6 +51,15 @@ export interface Planet {
   created: string
   edited: string
   url: string
+}
+
+export interface SimilarPlanetData {
+  similarPlanets?: {
+    name?: string
+    id?: string
+    summary?: string
+    similarLevel?: number
+  }[]
 }
 
 export interface DataGrid {
