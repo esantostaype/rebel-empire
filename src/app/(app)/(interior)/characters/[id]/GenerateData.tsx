@@ -8,6 +8,7 @@ import { getMainCharacterFullName } from '@/utils'
 import { Button, ProgressBar } from '@/components'
 import { DataSubtitle, PersonalityItem, CuriosityItem } from './ui'
 import { useEffect, useState } from 'react'
+import Markdown from 'react-markdown'
 
 type Props = {
   character: string
@@ -74,7 +75,7 @@ export const GenerateData = ({ character }: Props) => {
           { storedData.biography &&
             <div className="mb-12">
               <DataSubtitle text='Biografía' />
-              <p>{ storedData.biography }</p>
+              <Markdown>{ storedData.biography }</Markdown>
             </div>
           }
           { storedData.personality &&

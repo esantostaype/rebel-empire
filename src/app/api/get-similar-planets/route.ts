@@ -16,7 +16,7 @@ export async function POST( req: Request ) {
     model: openai('gpt-4o-mini'),
     schema: similarPlanetsSchema,
     prompt: `
-    *  Analizar todos estos planetas: ${ planets }, y seleccionar 3 planetas que tengan similitud con este planeta: ${ planetName }, ya sea por su Periodo de Rotación, Perioro Orbital, Diámetro, Clima, Gravedad, Terreno, Porcentaje de Agua en su superficie y/o Población, esta es la información detallada del planeta a comparar: ${ planet }.
+    *  Analizar todos estos planetas: ${ JSON.stringify( planets ) }, y seleccionar 3 planetas que tengan similitud con este planeta: ${ planetName }, ya sea por su Periodo de Rotación, Perioro Orbital, Diámetro, Clima, Gravedad, Terreno, Porcentaje de Agua en su superficie y/o Población, esta es la información detallada del planeta a comparar: ${ JSON.stringify( planet ) }.
     *  Enviar el Nombre de cada Planeta.
     *  Enviar el ID de cada planeta (El ID es el número al final de la URL, por ejemplo el ID de Tatooine sería el "1" -> "url": "https://swapi.dev/api/planets/1/")
     *  Hacer un resumen del por qué los planetas que elegiste son similares a ${ planetName }.

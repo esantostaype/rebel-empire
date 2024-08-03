@@ -5,10 +5,25 @@
 
 :root {
   --color-base: #485058;
+  color-scheme: dark;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+input, select, textarea{
+  background-color: transparent;
+}
+
+select option{
+  background-color: black;
+}
+
+:disabled{
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(100%)
 }
 
 .theme-luke {
@@ -32,15 +47,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h2{
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 h3{
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 p{
@@ -117,15 +132,17 @@ body {
 	animation-name: fadeIn;
 }
 
-.chat{
-  animation: closeChat 0.3s cubic-bezier(0.77, 0, 0.175, 1) 1;
+.chat,
+.c3po{
+  animation: closeDown 0.3s cubic-bezier(0.77, 0, 0.175, 1) 1;
 }
 
-.chat.active{
-  animation: openChat 0.3s cubic-bezier(0.77, 0, 0.175, 1) 1;
+.chat.active,
+.c3po.active{
+  animation: openUp 0.3s cubic-bezier(0.77, 0, 0.175, 1) 1;
 }
 
-@keyframes openChat {
+@keyframes openUp {
 	0% {
     opacity: 0;
     transform: translateY(20px);
@@ -137,7 +154,7 @@ body {
 	}
 }
 
-@keyframes closeChat {
+@keyframes closeDown {
 	0% {
     opacity: 1;
     transform: translateY(0);
@@ -154,6 +171,17 @@ body {
 }
 
 @media ( min-width: 1024px ) { 
+  h1{
+    font-size: 3rem;
+  }
+  
+  h2{
+    font-size: 2.5rem;
+  }
+  
+  h3{
+    font-size: 2rem;
+  }
 }
 
 @media ( min-width: 768px ) { 

@@ -18,7 +18,7 @@ export const Header = () => {
         <ul className="flex justify-center gap-12">
           <li><Link href="/characters" onClick={ handleCloseChat }>Personajes</Link></li>
           <li><Link href="/planets" onClick={ handleCloseChat }>Planetas</Link></li>
-          <li><Link href="/mini-stories" onClick={ handleCloseChat }>Mini Historias</Link></li>
+          <li><Link href="/translator" onClick={ handleCloseChat }>Traductor</Link></li>
         </ul>
       </nav>
       <div  className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20"></div>

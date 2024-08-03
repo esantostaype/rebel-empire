@@ -31,6 +31,7 @@
     "react-tilt": "^1.0.2",
     "react-toastify": "^10.0.5",
     "react-typed": "^2.0.12",
+    "sharp": "^0.33.4",
     "styled-components": "^6.1.11",
     "tailwind-gradient-mask-image": "^1.2.0",
     "tailwindcss-animated": "^1.1.2",

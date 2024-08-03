@@ -43,7 +43,7 @@ export const GenerateSimilarPlanets = ({ planet }: Props) => {
       { isLoading ? (
         <div className="mt-16">
           <p className="text-2xl text-center mb-8">Planetas similares a <strong className="text-accent">{ planet.name }:</strong></p>
-          <div className="flex gap-8">
+          <div className="flex gap-16">
             <SkeletonSimilarPlanet/>
             <SkeletonSimilarPlanet/>
             <SkeletonSimilarPlanet/>
@@ -53,7 +53,7 @@ export const GenerateSimilarPlanets = ({ planet }: Props) => {
         <div className="mt-16">
           <p className="text-2xl text-center mb-8">Planetas similares a <strong className="text-accent">{ planet.name }:</strong></p>
           { storedData.similarPlanets &&
-            <ul className="flex flex-col lg:flex-row gap-8">
+            <ul className="flex flex-col lg:flex-row gap-16">
               { storedData?.similarPlanets?.map(( planet, index ) => (
                 <li key={ index }>
                   <Link href={`/planets/${ planet?.id }`} className="flex items-center mb-4 group">

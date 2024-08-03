@@ -16,6 +16,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       setTheme( savedTheme as Theme )
     }
   }, [ theme, setTheme ])
+
   return (
     <>
     <ViewTransitions>

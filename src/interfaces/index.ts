@@ -67,6 +67,19 @@ export interface DataGrid {
   url: string
 }
 
+export interface Trivia {
+  question?: string
+  choices?: any
+  answer?: string
+}
+
+export interface Story {
+  choice?: string
+  targetAgeGroup?: string
+  numOfCharacters?: number
+  complexityLevel?: string
+}
+
 export type CharacterId = 'luke' | 'vader' | 'yoda'
 
 // export interface ExtendedDocument extends Document {
