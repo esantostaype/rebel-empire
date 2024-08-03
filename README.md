@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rebel Empire IA
 
-## Getting Started
+## Secciones de la App
 
-First, run the development server:
+### Inicio
+![screenshot](https://res.cloudinary.com/dq6txmetn/image/upload/v1722722744/start_wmz3ck.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![screenshot](https://res.cloudinary.com/dq6txmetn/image/upload/v1722722744/home_p3rbcg.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+En la sección Inicio, puedes chatear con simulaciones de IA de personajes icónicos de Star Wars. Elige entre:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Luke Skywalker
+* Darth Vader
+* Maestro Yoda
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Al seleccionar un personaje al comienzo, la app personaliza la experiencia del chat para simular conversaciones con tu personaje elegido.
 
-## Learn More
+### Personajes
 
-To learn more about Next.js, take a look at the following resources:
+![screenshot](https://res.cloudinary.com/dq6txmetn/image/upload/v1722722745/characters_a2469k.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Explora una lista detallada de Personajes del universo de Star Wars. Cada página de detalles de un personaje incluye información adicional generada por IA. Dependiendo del personaje seleccionado al inicio, la perspectiva de la información generada cambia.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Planetas
 
-## Deploy on Vercel
+![screenshot](https://res.cloudinary.com/dq6txmetn/image/upload/v1722722744/planets_brj8si.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Consulta una lista de Planetas y sus detalles. En cada página de detalles de un planeta, la IA puede generar información sobre 3 planetas similares.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Traductor
+
+![screenshot](https://res.cloudinary.com/dq6txmetn/image/upload/v1722722745/translator_qezlo5.png)
+
+El Traductor con IA es una herramienta impresionante que permite traducir entre varios idiomas del universo de Star Wars y otros idiomas reales. Al acceder a la página del Traductor, serás recibido por el icónico droide de protocolo, C-3PO.
+
+## Tecnologías utilizadas
+* Next.js: https://nextjs.org/
+* Typescript: https://www.typescriptlang.org/
+* Tailwind CSS: https://tailwindcss.com/
+
+## Recursos utilizados
+* SDK AI de Vercel: https://sdk.vercel.ai/
+* API de Star Wars: https://swapi.dev/api/
